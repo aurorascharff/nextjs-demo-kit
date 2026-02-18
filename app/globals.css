@@ -189,6 +189,10 @@
     400ms ease-in both slide-up;
 }
 
+::view-transition-group(anything) {
+  z-index: 100;
+}
+
 @keyframes slide-up {
   from {
     transform: translateY(10px);
