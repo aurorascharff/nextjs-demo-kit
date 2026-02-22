@@ -69,6 +69,48 @@ prisma/
 - Keep pages **non-async**. Push `searchParams`, `cookies()`, `headers()` into async server components inside `<Suspense>`.
 - Start fetches without awaiting, pass the promise to client components, unwrap with `use()`.
 
+## Data Fetching & Mutations
+
+**Queries** live in `data/queries/`. Wrap with `React.cache()` for deduplication. Await directly in Server Components. Only pass the promise unawaited if a client component needs to unwrap it with `use()`.
+
+```ts
+// data/queries/posts.ts
+import { cache } from 'react';
+export const getPosts = cache(async () => {
+  return db.post.findMany();
+});
+```
+
+```tsx
+// Server Component — just await
+const posts = await getPosts();
+
+// If a client component needs it, pass the promise instead
+const postsPromise = getPosts();
+return <PostList postsPromise={postsPromise} />;
+// then in the client component: const posts = use(postsPromise);
+```
+
+**Mutations** live in `data/actions/` with `"use server"`. Invalidate with `revalidateTag()` or `revalidatePath()` after mutating. Always call from within a transition for pending state.
+
+```ts
+// data/actions/posts.ts
+'use server';
+export async function deletePostAction(id: string) {
+  await db.post.delete({ where: { id } });
+  revalidateTag('posts');
+}
+```
+
+```tsx
+// Usage
+startTransition(async () => {
+  await deletePostAction(id);
+});
+```
+
+Tag queries with `cacheTag()` and match with `revalidateTag()` for fine-grained invalidation. Use `revalidatePath()` for simpler cases.
+
 ## Async React Patterns
 
 Replace manual `isLoading`/`isError` state with React 19 primitives:
