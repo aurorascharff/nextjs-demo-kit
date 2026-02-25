@@ -1,4 +1,4 @@
-import { CounterDemo } from './_components/CounterDemo';
+import { CounterDemo } from '@/components/slides/CounterDemo';
 import {
   Slide,
   SlideBadge,
@@ -9,8 +9,8 @@ import {
   SlideNote,
   SlideSubtitle,
   SlideTitle,
-} from './_components/Slide';
-import { SlideLink } from './_components/SlideLink';
+} from '@/components/slides/Slide';
+import { SlideLink } from '@/components/slides/SlideLink';
 
 export const slides: React.ReactNode[] = [
   <Slide key="welcome">
