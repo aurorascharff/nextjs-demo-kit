@@ -1,8 +1,8 @@
 import Link from 'next/link';
-import type { Route } from 'next';
 import { highlight } from 'sugar-high';
 import { cn } from '@/lib/utils';
 import { SlideDemoContent } from './SlideDemoContent';
+import type { Route } from 'next';
 
 export function Slide({
   children,
