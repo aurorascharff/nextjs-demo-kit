@@ -4,13 +4,13 @@ import {
   SlideBadge,
   SlideCode,
   SlideDemo,
+  SlideLink,
   SlideList,
   SlideListItem,
   SlideNote,
   SlideSubtitle,
   SlideTitle,
 } from '@/components/slides/Slide';
-import { SlideLink } from '@/components/slides/SlideLink';
 
 export const slides: React.ReactNode[] = [
   <Slide key="welcome">
@@ -127,9 +127,7 @@ async function greet(user: string) {
     <SlideTitle className="font-pixel">Now go build something.</SlideTitle>
     <SlideSubtitle>Navigate back to the demo or start creating your own slides.</SlideSubtitle>
     <div className="mt-4 flex items-center gap-4">
-      <SlideLink href="/" exit>
-        Exit Slides →
-      </SlideLink>
+      <SlideLink href="/">Exit Slides →</SlideLink>
       <SlideLink href="https://github.com/aurorascharff/nextjs-demo-kit" variant="ghost">
         GitHub
       </SlideLink>
