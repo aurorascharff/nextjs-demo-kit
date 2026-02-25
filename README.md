@@ -38,6 +38,7 @@ app/                      # Pages and layouts
   slides/                 # Slide deck system (see below)
 components/
   design/                 # Design system components with Action props
+  slides/                 # Slide primitives (Slide, SlideLink)
   ui/                     # shadcn/ui primitives
 data/
   actions/                # Server Actions
@@ -51,10 +52,6 @@ lib/
 Every page folder should contain everything it needs. Components and functions live at the nearest shared space in the hierarchy.
 
 **Naming:** PascalCase for components, kebab-case for files/folders, camelCase for functions/hooks. Suffix transition-based functions with "Action".
-
-## Slide Deck
-
-A composable presentation system at `/slides`. Each slide is a URL with keyboard, click, and dot navigation. Add slides by composing primitives (`Slide`, `SlideTitle`, `SlideCode`, etc.) in `app/slides/slides.tsx`. See `AGENTS.md` for details.
 
 ## Development Flow
 
@@ -83,3 +80,7 @@ bun run build
 Deploy to [Vercel](https://vercel.com) for the easiest experience. Use a production database instead of SQLite.
 
 See the [Next.js deployment docs](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+## Slide Deck
+
+A composable presentation system at `/slides`. Each slide is a URL with keyboard, click, and dot navigation. Add slides by composing primitives (`Slide`, `SlideTitle`, `SlideCode`, etc.) in `app/slides/slides.tsx`. See `AGENTS.md` for details.
