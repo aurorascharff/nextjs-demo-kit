@@ -50,21 +50,11 @@ export default async function SlidePage({ params }) {
     <SlideBadge>Navigation</SlideBadge>
     <SlideTitle className="text-3xl sm:text-4xl md:text-5xl">How to Navigate</SlideTitle>
     <SlideList>
-      <SlideListItem>
-        <strong>→ / Space</strong> — Next slide
-      </SlideListItem>
-      <SlideListItem>
-        <strong>←</strong> — Previous slide
-      </SlideListItem>
-      <SlideListItem>
-        <strong>Click right ⅔</strong> — Next slide
-      </SlideListItem>
-      <SlideListItem>
-        <strong>Click left ⅓</strong> — Previous slide
-      </SlideListItem>
-      <SlideListItem>
-        <strong>Progress dots</strong> — Jump to any slide
-      </SlideListItem>
+      <SlideListItem>→ / Space — Next slide</SlideListItem>
+      <SlideListItem>← — Previous slide</SlideListItem>
+      <SlideListItem>Click right ⅔ — Next slide</SlideListItem>
+      <SlideListItem>Click left ⅓ — Previous slide</SlideListItem>
+      <SlideListItem>Progress dots — Jump to any slide</SlideListItem>
     </SlideList>
     <SlideNote>All transitions are animated with the browser ViewTransition API.</SlideNote>
   </Slide>,
