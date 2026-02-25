@@ -1,4 +1,4 @@
-import { CounterDemo } from '@/components/slides/CounterDemo';
+import { CounterDemo } from '@/app/slides/_components/CounterDemo';
 import {
   Slide,
   SlideBadge,

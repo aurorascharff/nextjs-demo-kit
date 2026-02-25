@@ -1,4 +1,4 @@
-import { CounterDemo } from '@/components/slides/CounterDemo';
+import { CounterDemo } from '@/app/slides/_components/CounterDemo';
 import { SlideLink } from '@/components/slides/SlideLink';
 
 export default function Demo1Page() {
