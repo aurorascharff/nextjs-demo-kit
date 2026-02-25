@@ -78,7 +78,7 @@ export default async function SlidePage({ params }) {
       <SlideListItem>← — Previous slide</SlideListItem>
       <SlideListItem>Click right ⅔ — Next slide</SlideListItem>
       <SlideListItem>Click left ⅓ — Previous slide</SlideListItem>
-      <SlideListItem>Progress dots — Jump to any slide</SlideListItem>
+      <SlideListItem>Progress dots — Track your position</SlideListItem>
     </SlideList>
     <SlideNote>All transitions are animated with the browser ViewTransition API.</SlideNote>
   </Slide>,

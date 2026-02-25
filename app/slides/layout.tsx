@@ -122,28 +122,22 @@ export default function SlidesLayout({ children }: SlidesLayoutProps) {
         </ViewTransition>
 
         {isSlideRoute && (
-          <nav
+          <div
             className="fixed bottom-8 left-1/2 z-50 flex -translate-x-1/2 items-center gap-2"
-            aria-label="Slide navigation"
+            aria-label="Slide progress"
           >
             {Array.from({ length: total }).map((_, i) => {
               return (
-                <button
+                <div
                   key={i}
-                  onClick={e => {
-                    e.stopPropagation();
-                    goTo(i);
-                  }}
                   className={cn(
                     'h-1.5 rounded-full transition-all duration-300',
-                    i === current ? 'bg-foreground w-6' : 'bg-foreground/25 hover:bg-foreground/50 w-1.5',
+                    i === current ? 'bg-foreground w-6' : 'bg-foreground/25 w-1.5',
                   )}
-                  aria-label={`Go to slide ${i + 1}`}
-                  aria-current={i === current ? 'step' : undefined}
                 />
               );
             })}
-          </nav>
+          </div>
         )}
 
         {isSlideRoute && (
