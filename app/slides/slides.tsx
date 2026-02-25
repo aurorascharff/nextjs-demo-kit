@@ -1,5 +1,4 @@
 import { Counter } from '@/app/slides/_components/Counter';
-import { ExpandDemo } from '@/app/slides/_components/ExpandDemo';
 import {
   Slide,
   SlideBadge,
@@ -59,21 +58,6 @@ export default async function SlidePage({ params }) {
     <SlideNote>Wrap interactive content in SlideDemo — clicks and keys won&apos;t navigate</SlideNote>
   </Slide>,
 
-  <Slide key="stable-demos">
-    <SlideBadge>No CLS</SlideBadge>
-    <SlideTitle className="text-3xl sm:text-4xl md:text-5xl">Stable Demos</SlideTitle>
-    <SlideSubtitle>SlideDemo locks to max height — content can grow but never shrink the card</SlideSubtitle>
-    <SlideDemo label="Try toggling">
-      <ExpandDemo />
-    </SlideDemo>
-    <SlideCode title="How it works">{`// SlideDemoContent wraps children with a ResizeObserver
-// that ratchets min-height up, never down
-
-<SlideDemo label="Live demo">
-  <MyComponent />  {/* resize without CLS */}
-</SlideDemo>`}</SlideCode>
-  </Slide>,
-
   <Slide key="routing">
     <SlideBadge>Routing</SlideBadge>
     <SlideTitle className="text-3xl sm:text-4xl md:text-5xl">Breakout Routes</SlideTitle>
@@ -82,7 +66,7 @@ export default async function SlidePage({ params }) {
 <SlideLink href="/slides/demo1">Open Demo →</SlideLink>
 
 // In /slides/demo1/page.tsx — link back
-<SlideLink href="/slides/6">← Back to slides</SlideLink>`}</SlideCode>
+<SlideLink href="/slides/5">← Back to slides</SlideLink>`}</SlideCode>
     <SlideLink href="/slides/demo1">Open Demo →</SlideLink>
   </Slide>,
 
