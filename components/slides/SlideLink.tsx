@@ -12,6 +12,7 @@ type SlideLinkProps = {
 export function SlideLink({ href, children, className, variant = 'primary' }: SlideLinkProps) {
   return (
     <Link
+      prefetch={true}
       href={href as Route}
       className={cn(
         'mt-2 inline-flex items-center gap-2 rounded-lg px-6 py-3 text-sm font-medium tracking-wide transition-opacity hover:opacity-80',
