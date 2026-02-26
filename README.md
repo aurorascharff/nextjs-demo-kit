@@ -1,6 +1,6 @@
 # Next.js Demo Kit
 
-A demo toolkit built with [Next.js 16](https://nextjs.org/), [React 19](https://react.dev/), [Prisma](https://www.prisma.io/), [Tailwind CSS](https://tailwindcss.com/), and [shadcn/ui](https://ui.shadcn.com/) (built on [Base UI](https://base-ui.com/)). Includes a component showcase, a composable slide deck system, and modern patterns for building interactive demos.
+A demo toolkit built with [Next.js 16](https://nextjs.org/), [React 19](https://react.dev/), [Prisma](https://www.prisma.io/), [Tailwind CSS](https://tailwindcss.com/), and [shadcn/ui](https://ui.shadcn.com/) (built on [Base UI](https://base-ui.com/)). Includes a component showcase, a slide deck powered by [`nextjs-slides`](https://www.npmjs.com/package/nextjs-slides), and modern patterns for building interactive demos.
 
 Uses [`cacheComponents`](https://nextjs.org/docs/app/api-reference/config/next-config-js/cacheComponents) for performance and modern [Async React](https://async-react.dev/) patterns for declarative async coordination.
 
@@ -35,10 +35,9 @@ DATABASE_URL="postgres://..."
 ```plaintext
 app/                      # Pages and layouts
   _components/            # Route-local components
-  slides/                 # Slide deck system (see below)
+  slides/                 # Slide deck (uses nextjs-slides package)
 components/
   design/                 # Design system components with Action props
-  slides/                 # Slide primitives (Slide, SlideLink)
   ui/                     # shadcn/ui primitives
 data/
   actions/                # Server Actions
@@ -83,4 +82,4 @@ See the [Next.js deployment docs](https://nextjs.org/docs/app/building-your-appl
 
 ## Slide Deck
 
-A composable presentation system at `/slides`. Each slide is a URL with keyboard, click, and dot navigation. Add slides by composing primitives (`Slide`, `SlideTitle`, `SlideCode`, etc.) in `app/slides/slides.tsx`. See `AGENTS.md` for details.
+Uses [`nextjs-slides`](https://www.npmjs.com/package/nextjs-slides) for composable presentations at `/slides`. Each slide is a URL with keyboard navigation and progress indicators. Add slides by composing primitives (`Slide`, `SlideTitle`, `SlideCode`, `SlideSplitLayout`, etc.) in `app/slides/slides.tsx`. See `AGENTS.md` for details.
