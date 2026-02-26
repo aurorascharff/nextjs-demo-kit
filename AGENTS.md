@@ -19,7 +19,7 @@ bun run prisma.generate  # generate Prisma client
 
 ## Stack
 
-Next.js 16 App Router · React 19 · TypeScript strict · Tailwind CSS 4 · shadcn/ui · Base UI · Prisma · nuqs · SWR · Zod · Sonner · next-themes · sugar-high
+Next.js 16 App Router · React 19 · TypeScript strict · Tailwind CSS 4 · shadcn/ui · Base UI · Prisma · nuqs · SWR · Zod · Sonner · next-themes · nextjs-slides
 
 ## Next.js 16 APIs (not in training data)
 
