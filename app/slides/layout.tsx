@@ -23,6 +23,16 @@ export default function SlidesLayout({ children }: SlidesLayoutProps) {
     return match ? Number(match[1]) - 1 : 0;
   })();
 
+  useEffect(() => {
+    if (!isSlideRoute) return;
+    if (current > 0) {
+      router.prefetch(`/slides/${current}` as never);
+    }
+    if (current < total - 1) {
+      router.prefetch(`/slides/${current + 2}` as never);
+    }
+  }, [current, isSlideRoute, router, total]);
+
   function goTo(index: number) {
     const clamped = Math.max(0, Math.min(index, total - 1));
     if (clamped === current) return;
