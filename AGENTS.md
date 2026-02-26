@@ -221,9 +221,9 @@ startTransition(() => {
 </ViewTransition>
 ```
 
-## Slide Deck System
+## Slide Deck
 
-Uses the `nextjs-slides` package for composable presentations with URL-based routing, ViewTransitions, and sugar-high syntax highlighting.
+Uses [`nextjs-slides`](https://www.npmjs.com/package/nextjs-slides) for composable presentations. See the package documentation for available primitives and props.
 
 **Key files:**
 
@@ -231,19 +231,7 @@ Uses the `nextjs-slides` package for composable presentations with URL-based rou
 - `app/slides/layout.tsx` — Uses `<SlideDeck>` from the package.
 - `app/slides/[page]/page.tsx` — Uses `getSlide()` and `generateSlideParams()` from the package.
 
-**Adding a slide:** Add a `<Slide>` element to the `slides` array. Available primitives from `nextjs-slides`:
-
-- Layout: `Slide`, `SlideSplitLayout`
-- Typography: `SlideTitle`, `SlideSubtitle`, `SlideBadge`, `SlideHeaderBadge`, `SlideNote`
-- Content: `SlideCode`, `SlideDemo`, `SlideStatement`, `SlideStatementList`
-- Speakers: `SlideSpeaker`, `SlideSpeakerGrid`, `SlideSpeakerList`
-- Navigation: `SlideLink`
-
-**Interactive components:** Wrap in `<SlideDemo>` — keyboard/click navigation won't interfere.
-
-**Links:** Use `<SlideLink href="/slides/3">` to navigate. Links animate via ViewTransition.
-
-**Styles:** Import `nextjs-slides/styles.css` in globals.css. Code theme uses `--sh-*` CSS variables.
+**Setup:** Import `nextjs-slides/styles.css` in globals.css and add `@source "../node_modules/nextjs-slides/dist"` for Tailwind v4.
 
 ## Error Handling
 

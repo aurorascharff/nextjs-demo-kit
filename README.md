@@ -82,4 +82,4 @@ See the [Next.js deployment docs](https://nextjs.org/docs/app/building-your-appl
 
 ## Slide Deck
 
-Uses [`nextjs-slides`](https://www.npmjs.com/package/nextjs-slides) for composable presentations at `/slides`. Each slide is a URL with keyboard navigation and progress indicators. Add slides by composing primitives (`Slide`, `SlideTitle`, `SlideCode`, `SlideSplitLayout`, etc.) in `app/slides/slides.tsx`. See `AGENTS.md` for details.
+Uses [`nextjs-slides`](https://www.npmjs.com/package/nextjs-slides) for composable presentations at `/slides`. Add slides by composing primitives in `app/slides/slides.tsx`. See the [package documentation](https://www.npmjs.com/package/nextjs-slides) for available primitives and props.
