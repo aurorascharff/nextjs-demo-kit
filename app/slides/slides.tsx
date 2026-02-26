@@ -3,24 +3,32 @@ import {
   Slide,
   SlideBadge,
   SlideCode,
+  SlideHeaderBadge,
   SlideDemo,
   SlideLink,
-  SlideList,
-  SlideListItem,
   SlideNote,
+  SlideSpeaker,
+  SlideSpeakerGrid,
+  SlideSpeakerList,
+  SlideSplitLayout,
+  SlideStatement,
+  SlideStatementList,
   SlideSubtitle,
   SlideTitle,
 } from '@/components/slides/Slide';
 
 export const slides: React.ReactNode[] = [
-  <Slide key="welcome">
-    <SlideBadge>Slide Deck</SlideBadge>
+  <Slide key="welcome" align="left">
+    <SlideHeaderBadge>Slide Deck</SlideHeaderBadge>
     <SlideTitle className="font-pixel">Code Your Slides</SlideTitle>
     <SlideSubtitle>A composable slide system built with React, ViewTransitions, and Geist</SlideSubtitle>
-    <SlideNote>Press → or Space to continue · ← to go back · Click anywhere</SlideNote>
+    <SlideSpeakerGrid className="mt-8">
+      <SlideSpeaker name="First & Last Name" title="Title / Company" />
+      <SlideSpeaker name="First & Last Name" title="Title / Company" />
+    </SlideSpeakerGrid>
   </Slide>,
 
-  <Slide key="getting-started">
+  <Slide key="getting-started" align="left">
     <SlideBadge>Setup</SlideBadge>
     <SlideTitle className="text-3xl sm:text-4xl md:text-5xl">Getting Started</SlideTitle>
     <SlideCode title="app/slides/[page]/page.tsx">{`import { slides } from '@/app/slides/slides';
@@ -32,21 +40,22 @@ export default async function SlidePage({ params }) {
     <SlideNote>Each slide is a page — /slides/1, /slides/2, etc.</SlideNote>
   </Slide>,
 
-  <Slide key="primitives">
-    <SlideBadge>Primitives</SlideBadge>
-    <SlideTitle className="text-3xl sm:text-4xl md:text-5xl">Building Blocks</SlideTitle>
-    <SlideCode title="Every component in one slide">{`<Slide align="left">
-  <SlideBadge>Topic</SlideBadge>
-  <SlideTitle>Heading</SlideTitle>
-  <SlideSubtitle>Secondary text</SlideSubtitle>
-  <SlideCode title="file.ts">{\`const x = 1;\`}</SlideCode>
-  <SlideList>
-    <SlideListItem>Bullet point</SlideListItem>
-  </SlideList>
-  <SlideNote>Footnote text</SlideNote>
-  <SlideLink href="/slides/1">Back →</SlideLink>
-</Slide>`}</SlideCode>
-  </Slide>,
+  <SlideSplitLayout
+    key="primitives"
+    left={
+      <>
+        <SlideBadge>Primitives</SlideBadge>
+        <SlideTitle className="mt-6 text-3xl sm:text-4xl md:text-5xl">Building Blocks</SlideTitle>
+      </>
+    }
+    right={
+      <SlideStatementList>
+        <SlideStatement title="Slide & SlideSplitLayout" description="Full-screen containers with border frames" />
+        <SlideStatement title="SlideTitle & SlideSubtitle" description="Typography primitives for headings" />
+        <SlideStatement title="SlideCode & SlideDemo" description="Syntax-highlighted code and interactive content" />
+      </SlideStatementList>
+    }
+  />,
 
   <Slide key="interactive">
     <SlideBadge>Interactive</SlideBadge>
@@ -58,7 +67,7 @@ export default async function SlidePage({ params }) {
     <SlideNote>Wrap interactive content in SlideDemo — clicks and keys won&apos;t navigate</SlideNote>
   </Slide>,
 
-  <Slide key="routing">
+  <Slide key="routing" align="left">
     <SlideBadge>Routing</SlideBadge>
     <SlideTitle className="text-3xl sm:text-4xl md:text-5xl">Breakout Routes</SlideTitle>
     <SlideSubtitle>Navigate to a full page inside /slides — deck chrome hides automatically</SlideSubtitle>
@@ -70,18 +79,23 @@ export default async function SlidePage({ params }) {
     <SlideLink href="/slides/demo1">Open Demo →</SlideLink>
   </Slide>,
 
-  <Slide key="navigation" align="left">
-    <SlideBadge>Navigation</SlideBadge>
-    <SlideTitle className="text-3xl sm:text-4xl md:text-5xl">How to Navigate</SlideTitle>
-    <SlideList>
-      <SlideListItem>→ / Space — Next slide</SlideListItem>
-      <SlideListItem>← — Previous slide</SlideListItem>
-      <SlideListItem>Click right ⅔ — Next slide</SlideListItem>
-      <SlideListItem>Click left ⅓ — Previous slide</SlideListItem>
-      <SlideListItem>Progress dots — Track your position</SlideListItem>
-    </SlideList>
-    <SlideNote>All transitions are animated with the browser ViewTransition API.</SlideNote>
-  </Slide>,
+  <SlideSplitLayout
+    key="navigation"
+    left={
+      <>
+        <SlideBadge>Navigation</SlideBadge>
+        <SlideTitle className="mt-6 text-3xl sm:text-4xl md:text-5xl">How to Navigate</SlideTitle>
+      </>
+    }
+    right={
+      <SlideStatementList>
+        <SlideStatement title="→ / Space" description="Next slide" />
+        <SlideStatement title="←" description="Previous slide" />
+        <SlideStatement title="Click right ⅔" description="Next slide" />
+        <SlideStatement title="Click left ⅓" description="Previous slide" />
+      </SlideStatementList>
+    }
+  />,
 
   <Slide key="code">
     <SlideBadge>Code</SlideBadge>
@@ -108,19 +122,34 @@ async function greet(user: string) {
     </SlideSubtitle>
   </Slide>,
 
-  <Slide key="theme-links">
-    <SlideBadge>Features</SlideBadge>
-    <SlideTitle className="text-3xl sm:text-4xl md:text-5xl">Theme & Links</SlideTitle>
-    <SlideSubtitle>
-      Slides follow your app theme — toggle light/dark anytime. Use SlideLink to connect slides to your app.
-    </SlideSubtitle>
-    <SlideSubtitle className="font-pixel text-base">
-      Geist Pixel is also available — use font-pixel for display moments.
-    </SlideSubtitle>
-    <SlideCode title="End slide with a link back">{`<Slide>
-  <SlideTitle>Thank You</SlideTitle>
-  <SlideLink href="/">Back to Demo →</SlideLink>
-</Slide>`}</SlideCode>
+  <SlideSplitLayout
+    key="theme-links"
+    left={
+      <>
+        <SlideBadge>Features</SlideBadge>
+        <SlideTitle className="mt-6 text-3xl sm:text-4xl md:text-5xl">Theme & Links</SlideTitle>
+        <SlideSubtitle className="mt-4">
+          Slides follow your app theme. Use SlideLink to connect slides to your app.
+        </SlideSubtitle>
+      </>
+    }
+    right={
+      <SlideStatementList>
+        <SlideStatement title="Theme Toggle" description="Light and dark mode supported" />
+        <SlideStatement title="SlideLink" description="Navigate between slides and your app" />
+        <SlideStatement title="ViewTransition" description="All animations are automatic" />
+      </SlideStatementList>
+    }
+  />,
+
+  <Slide key="qa">
+    <SlideBadge>Q&A</SlideBadge>
+    <SlideSpeakerList className="mt-12">
+      <SlideSpeaker name="First & Last Name" title="Title / Company" />
+      <SlideSpeaker name="First & Last Name" title="Title / Company" />
+      <SlideSpeaker name="First & Last Name" title="Title / Company" />
+      <SlideSpeaker name="First & Last Name" title="Title / Company" />
+    </SlideSpeakerList>
   </Slide>,
 
   <Slide key="end">
