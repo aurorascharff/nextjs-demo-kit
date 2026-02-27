@@ -34,7 +34,7 @@ export default function RootLayout({ children }: LayoutProps<'/'>) {
             <main>{children}</main>
             <div
               style={{ viewTransitionName: 'global-controls' }}
-              className="fixed bottom-4 left-4 right-4 z-60 flex items-center justify-between"
+              className="fixed bottom-4 left-4 right-4 z-60 hidden items-center justify-between sm:flex"
             >
               <Link
                 href="https://github.com/aurorascharff/nextjs-demo-kit"

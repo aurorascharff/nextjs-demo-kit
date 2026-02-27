@@ -1,4 +1,8 @@
-Welcome everyone. Build Demos Fast — a toolkit for interactive demos with React 19, Next.js 16, and modern patterns.
+Welcome. Brief intro — we'll walk through the Next.js Demo Kit, a starter for interactive demos and presentations.
+
+---
+
+Build Demos Fast — a toolkit for interactive demos with React 19, Next.js 16, and modern patterns.
 
 ---
 

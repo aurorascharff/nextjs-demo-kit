@@ -16,6 +16,12 @@ import {
 import { TabListDemo } from '@/app/(demo)/slides/_components/TabListDemo';
 
 export const slides: React.ReactNode[] = [
+  <Slide key="intro" align="center">
+    <SlideBadge>Welcome</SlideBadge>
+    <SlideTitle className="mt-6 text-3xl sm:text-4xl md:text-5xl">Next.js Demo Kit</SlideTitle>
+    <SlideSubtitle className="mt-4">A quick tour of the starter and its patterns</SlideSubtitle>
+  </Slide>,
+
   <Slide key="title" align="left">
     <SlideHeaderBadge>Next.js Demo Kit</SlideHeaderBadge>
     <SlideTitle className="font-pixel">Build Demos Fast</SlideTitle>
