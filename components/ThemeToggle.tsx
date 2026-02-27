@@ -21,7 +21,7 @@ export function ThemeToggle() {
   return (
     <div
       style={{ viewTransitionName: 'theme-toggle' }}
-      className="border-border bg-background/80 fixed right-4 bottom-4 z-50 inline-flex items-center rounded-full border p-1 shadow-lg backdrop-blur-sm"
+      className="border-border bg-background/80 inline-flex items-center rounded-full border p-1 shadow-lg backdrop-blur-sm"
     >
       <button
         type="button"

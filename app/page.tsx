@@ -9,7 +9,7 @@ const techStack = ['Next.js 16', 'React 19', 'Tailwind v4', 'shadcn/ui', 'Prisma
 
 export default function Page() {
   return (
-    <div className="bg-background mx-auto flex h-screen max-h-screen w-full max-w-5xl flex-col gap-6 overflow-hidden p-6 lg:px-12 lg:py-8 2xl:max-w-6xl">
+    <div className="bg-background mx-auto flex min-h-screen w-full max-w-5xl flex-col gap-6 overflow-x-hidden p-6 pb-24 lg:px-12 lg:py-8 2xl:max-w-6xl">
       <nav className="flex items-center justify-between">
         <span className="text-muted-foreground text-sm font-medium">Next.js Demo Kit</span>
         <Link
@@ -34,7 +34,7 @@ export default function Page() {
         </Link>
       </section>
 
-      <div className="min-h-0 flex-1">
+      <div className="min-h-0 flex-1 overflow-y-auto">
         <ComponentExample />
       </div>
 
