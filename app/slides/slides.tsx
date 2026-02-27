@@ -194,7 +194,7 @@ export const slides = [
   <Slide key="end">
     <SlideTitle className="font-pixel">Start building.</SlideTitle>
     <SlideSubtitle>Clone the repo, run bun dev, and start creating</SlideSubtitle>
-    <SlideCode title="terminal.sh">{`git clone https://github.com/aurorascharff/nextjs-demo-kit
+    <SlideCode title="getting-started.ts">{`git clone https://github.com/aurorascharff/nextjs-demo-kit
 cd nextjs-demo-kit
 bun install
 bun run dev`}</SlideCode>
