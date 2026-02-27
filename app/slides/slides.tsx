@@ -58,18 +58,20 @@ export const slides: React.ReactNode[] = [
       </>
     }
     right={
-      <SlideCode title="components/design/TabList.tsx">{`function TabList({ tabs, activeTab, changeAction }) {
-  const [optimisticTab, setOptimisticTab] = useOptimistic(activeTab);
-  const [isPending, startTransition] = useTransition();
+      <SlideCode title="usage.tsx">{`const [activeTab, setActiveTab] = useState('overview');
 
-  function handleChange(value: string) {
-    startTransition(async () => {
-      setOptimisticTab(value);
-      await changeAction(value);
-    });
-  }
-  return <Tabs value={optimisticTab}>...</Tabs>;
-}`}</SlideCode>
+<TabList
+  tabs={[
+    { label: 'Overview', value: 'overview' },
+    { label: 'Analytics', value: 'analytics' },
+    { label: 'Settings', value: 'settings' },
+  ]}
+  activeTab={activeTab}
+  changeAction={async (value) => {
+    await updateTab(value);
+    setActiveTab(value);
+  }}
+/>`}</SlideCode>
     }
   />,
 
