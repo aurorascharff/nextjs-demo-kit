@@ -29,7 +29,10 @@ export default function Page() {
           A toolkit for interactive demos with React 19, Next.js 16, and modern patterns. shadcn/ui &middot; Prisma
           &middot; Tailwind v4
         </p>
-        <Link href={'/slides/1' as Route} className={buttonVariants({ size: 'default', variant: 'default' }) + ' mt-1 self-start'}>
+        <Link
+          href={'/slides/1' as Route}
+          className={buttonVariants({ size: 'default', variant: 'default' }) + ' mt-1 self-start'}
+        >
           Start Slides &rarr;
         </Link>
       </section>
@@ -39,7 +42,9 @@ export default function Page() {
       </div>
 
       <section className="flex flex-col gap-4">
-        <span className="text-muted-foreground text-xs font-semibold tracking-widest uppercase">Component Showcase</span>
+        <span className="text-muted-foreground text-xs font-semibold tracking-widest uppercase">
+          Component Showcase
+        </span>
         <div className="flex flex-wrap gap-3">
           {techStack.map(tech => (
             <Badge key={tech} variant="secondary">

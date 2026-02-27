@@ -4,10 +4,7 @@ function ShowcaseWrapper({ className, ...props }: React.ComponentProps<'div'>) {
   return (
     <div
       data-slot="showcase-wrapper"
-      className={cn(
-        'grid h-full w-full min-w-0 items-start gap-6 md:grid-cols-2 md:gap-8',
-        className,
-      )}
+      className={cn('grid h-full w-full min-w-0 items-start gap-6 md:grid-cols-2 md:gap-8', className)}
       {...props}
     />
   );

@@ -3,7 +3,7 @@
 @import 'shadcn/tailwind.css';
 @import 'nextjs-slides/styles.css';
 
-@source "../node_modules/nextjs-slides/dist";
+@source '../node_modules/nextjs-slides/dist';
 
 @custom-variant dark (&:is(.dark *));
 
@@ -192,4 +192,3 @@
 ::view-transition-group(theme-toggle) {
   z-index: 100;
 }
-

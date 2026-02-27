@@ -48,7 +48,7 @@ lib/
 
 - **components/ui** — [shadcn/ui](https://ui.shadcn.com/) components. Add with `bunx shadcn@latest add <component-name>`
 - **components/design** — Components that expose [Action props](https://react.dev/reference/react/useTransition#exposing-action-props-from-components) and handle async coordination internally
-Every page folder should contain everything it needs. Components and functions live at the nearest shared space in the hierarchy.
+  Every page folder should contain everything it needs. Components and functions live at the nearest shared space in the hierarchy.
 
 **Naming:** PascalCase for components, kebab-case for files/folders, camelCase for functions/hooks. Suffix transition-based functions with "Action".
 
