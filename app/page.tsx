@@ -9,7 +9,7 @@ const techStack = ['Next.js 16', 'React 19', 'Tailwind v4', 'shadcn/ui', 'Prisma
 
 export default function Page() {
   return (
-    <div className="bg-background mx-auto flex min-h-screen w-full max-w-5xl flex-col gap-12 p-6 lg:p-12 2xl:max-w-6xl">
+    <div className="bg-background mx-auto flex w-full max-w-5xl flex-col gap-8 p-6 lg:p-12 2xl:max-w-6xl">
       <nav className="flex items-center justify-between">
         <span className="text-muted-foreground text-sm font-medium">Next.js Demo Kit</span>
         <Link
@@ -31,7 +31,7 @@ export default function Page() {
             &middot; Tailwind v4
           </p>
         </div>
-        <Link href={'/slides/1' as Route} className={buttonVariants({ size: 'lg', variant: 'default' })}>
+        <Link href={'/slides/1' as Route} className={buttonVariants({ size: 'default', variant: 'default' }) + ' self-start'}>
           Start Slides &rarr;
         </Link>
       </section>
